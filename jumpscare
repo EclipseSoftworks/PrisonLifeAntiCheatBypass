@@ -1,0 +1,29 @@
+
+local player = game.Players.LocalPlayer
+local gui = player:WaitForChild("PlayerGui")
+
+local screenGui = Instance.new("ScreenGui")
+screenGui.Parent = gui
+
+local imageLabel = Instance.new("ImageLabel")
+imageLabel.Parent = screenGui
+imageLabel.BackgroundTransparency = 1
+imageLabel.Position = UDim2.new(-0.380947411, 0, -0.237745091, 0)
+imageLabel.Size = UDim2.new(1, 1301, 0, 1301)
+imageLabel.Visible = false
+imageLabel.Image = "rbxassetid://14543570312"
+
+
+local sound = Instance.new("Sound")
+sound.Name = "Jumpscare"
+sound.SoundId = "rbxassetid://85271883712040"
+sound.Volume = 1
+sound.Parent = imageLabel
+
+
+imageLabel.Visible = true
+sound:Play()
+
+task.wait(3)
+
+imageLabel.Visible = false
